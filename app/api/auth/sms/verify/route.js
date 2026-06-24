@@ -61,7 +61,7 @@ export async function POST(req) {
     const accessToken = jwt.sign(
       accessPayload,
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "7h" }, // انقضا 7 ساعت
+      { expiresIn: "7d" }, // انقضا 7 روز
     );
 
     const refreshToken = jwt.sign(
@@ -81,7 +81,7 @@ export async function POST(req) {
 
     cookieStore.set("accessToken", accessToken, {
       httpOnly: true,
-      maxAge: 7 * 60 * 60,
+      maxAge: 7 * 24 * 60 * 60,
       sameSite: "strict",
       secure: process.env.NODE_ENV === "production",
       path: "/",

@@ -16,6 +16,7 @@ export default function ProfilePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { user } = useAuth();
+
   const myCourse = user?.purchasedCourses;
   useEffect(() => {
     const fetchUserCourses = async () => {
@@ -68,7 +69,7 @@ export default function ProfilePage() {
           <div className={styles.user_info}>
             <h3>سلام کاربر عزیز 👋</h3>
 
-            <p>{PhoneFormatter("09393148674")}</p>
+            <p>{PhoneFormatter(user?.phone)}</p>
 
             <span>
               <FaCalendar />

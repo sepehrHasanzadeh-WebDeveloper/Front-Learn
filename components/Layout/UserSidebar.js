@@ -2,14 +2,14 @@
 
 import styles from "./UserSidebar.module.css";
 import Link from "next/link";
-import { MdDashboard, MdLogout } from "react-icons/md";
+import { MdDashboard, MdLogout , MdAccountCircle  } from "react-icons/md";
 import { FaComment } from "react-icons/fa";
 import { SiCoursera } from "react-icons/si";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePathname } from "next/navigation";
 import Swal from "sweetalert2";
 import { useState } from "react";
-import Image from "next/image";
+
 
 export default function UserSidebar() {
   const [open, setOpen] = useState(false);
@@ -81,6 +81,13 @@ export default function UserSidebar() {
           >
             <FaComment size={18} />
             دیدگاه‌ها
+          </Link>
+           <Link
+            href="/profile/account"
+            className={isActive("/profile/account")}
+          >
+            <MdAccountCircle size={22} />
+           حساب من
           </Link>
         </nav>
 
