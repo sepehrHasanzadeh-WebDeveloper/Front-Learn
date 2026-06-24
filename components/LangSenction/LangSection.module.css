@@ -1,0 +1,27 @@
+.title_lang_section {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 0.2px;
+  color: var(--title-text-light);
+}
+.title_lang_section span {
+  border-bottom: 10px solid var(--accent);
+}
+.text_lang_section {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: rgba(90, 113, 132, 1);
+  margin-top: 18px;
+}
+
+.parent_lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 12px;
+  width: 64px;
+  height: 64px;
+}

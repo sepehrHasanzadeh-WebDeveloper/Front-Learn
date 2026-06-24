@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #001619;
+  --background: #f9ffff;
+  --primary: #0adcfc;
+  --secondary: #af7afb;
+  --secondary2: #c640fa;
+  --accent: #4f45fd;
+  --title-text-light: rgba(24, 59, 86, 1);
+  --sub-text-color: rgba(90, 113, 132, 1);
+  --bg-dark-100: rgb(51 60 76);
+  --bg-dark-200: rgb(36 42 56);
+  --bg-dark-300: rgb(17 24 39);
+
+  --text-dark-100: rgb(255, 255, 255);
+  --text-dark-200: rgb(158 175 201);
+  --text-dark-300: rgb(129 142 162);
+
+  --admin-panel-theme: linear-gradient(
+    to top,
+    #1e3c72 0%,
+    #1e3c72 1%,
+    #2a5298 100%
+  );
+}
+
+body {
+  background-color: var(--background);
+  color: #001619;
+  font-family: var(--font-myfont) !important;
+  font-weight: 700;
+  overflow-x: hidden;
+}
+body.dark {
+  background-color: var(--bg-dark-300);
+  color: var(--text-dark-100);
+}
+
+ul {
+  list-style-position: inside;
+}
+a {
+  color: var(--text-dark-300);
+  text-decoration: none !important;
+}
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+}
+
+button:disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+.slider-wrapper {
+  position: relative;
+  padding: 15px 40px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 42px !important;
+  height: 42px !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 100 !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-prev {
+  left: -10px !important;
+}
+
+.swiper-button-next {
+  right: -10px !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none !important;
+}
+
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  width: 20px;
+  height: 20px;
+  color: #333;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #fff !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}

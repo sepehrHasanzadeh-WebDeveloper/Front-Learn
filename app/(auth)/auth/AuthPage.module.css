@@ -1,0 +1,117 @@
+.authWraper {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  background-color: rgb(243 244 246);
+  position: relative;
+  overflow: hidden;
+}
+
+.right {
+  width: 50%;
+  height: 100vh;
+}
+.form_section {
+  border-radius: 10px;
+  background-color: white;
+  width: 350px;
+  padding: 40px 25px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.form_section h2 {
+  text-align: center;
+  color: rgb(50, 49, 49);
+}
+.form_section h3 {
+  font-size: 18px;
+  color: rgb(61, 61, 61);
+  margin: 10px 0;
+}
+.form_section p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: rgb(128, 128, 128);
+}
+
+.form_section button,
+.form_section .form_Input {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: rgb(243 244 246);
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.form_section button {
+    background-color: var(--accent);
+    color: white;
+    font-weight: bold;
+}
+.color_section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  background: linear-gradient(270deg, #0e0564, #041c35, #110125, #25083d);
+  background-size: 600% 600%;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 700px;
+  animation: gradientMove 14s linear infinite;
+  z-index: 1;
+}
+.form_section .gotoBack {
+    color: rgb(78, 78, 78);
+    margin-right: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 5px;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.resendOtp {
+    margin-top: 20px;
+}
+.resendOtp button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.resendOtp p {
+    font-size: 13px;
+    color: #555;
+}
+
+.resend {
+    color: #3f64ff;
+    cursor: pointer;
+    text-align: center;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

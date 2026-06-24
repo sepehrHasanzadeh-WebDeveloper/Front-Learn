@@ -1,0 +1,124 @@
+.nav_bar_content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px;
+  align-items: center;
+  height: 100px;
+}
+.mobile_menu {
+  color: #ffffff;
+  font-size: 35px;
+  display: none;
+  cursor: pointer;
+}
+.brand_bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand_bar h4 {
+  font-family: var(--avinyFont);
+  color: #ffffff;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.brand_bar img {
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.links_bar ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+}
+.links_bar ul li {
+  margin: 15px 25px 0 50px;
+}
+.links_bar ul li span {
+  margin-right: 5px;
+}
+.links_bar ul li a {
+  color: #ffffff;
+  display: flex !important;
+}
+.auth_bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth_bar button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  border: 0;
+  height: 40px;
+  color: #ffffff;
+}
+
+.cart_wraper {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  margin: 10px;
+  color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: auto;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cart_count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: rgb(98, 0, 255);
+  color: white;
+  border-radius: 999px;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+.caret_left {
+  font-size: 15px !important;
+}
+
+@media screen and (max-width: 1220px) {
+  .links_bar {
+    display: none;
+  }
+  .mobile_menu {
+    display: block;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cart_wraper {
+    display: none;
+  }
+  .brand_bar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+  }
+  .brand_bar h4 {
+    font-size: 22px;
+  }
+
+  .nav_bar_content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+}

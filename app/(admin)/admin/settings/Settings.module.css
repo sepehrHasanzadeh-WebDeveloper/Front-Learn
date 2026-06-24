@@ -1,0 +1,12 @@
+.them_selection {
+    width: 100px;
+    height: 100px;
+    margin: 25px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.them_selection:hover {
+    transition: all 0.5s;
+    border: 2px solid lightgray;
+}

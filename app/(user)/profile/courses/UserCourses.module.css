@@ -1,0 +1,25 @@
+.empty_user_course {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  flex-direction: column;
+}
+.empty_user_course img {
+  width: 600px;
+  height: 200px;
+  margin-bottom: 15px;
+}
+.see_more_course_btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.see_more_course_btn:hover {
+  transform: translateY(-2px);
+}

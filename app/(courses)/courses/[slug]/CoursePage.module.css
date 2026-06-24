@@ -1,0 +1,243 @@
+.btn_add_course_cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 220px;
+  min-width: 0;
+  height: 56px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2);
+}
+
+.btn_add_course_cart:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px rgba(79, 70, 229, 0.28);
+}
+
+.free_course {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 140px;
+  height: 56px;
+  border-radius: 16px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 0 20px;
+}
+
+.p_discount_price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 180px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f97316, #fb7185);
+  color: white;
+  padding: 8px 15px;
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.25);
+}
+
+.p_discount_price span {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.p_discount_price del {
+  font-size: 12px;
+  opacity: 0.85;
+}
+.btn_start_course {
+  color: white;
+  border-radius: 15px;
+  border: 0;
+  background-color: rgb(79, 208, 79);
+  padding: 15px 22px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.btn_start_course:hover {
+  transition: all 0.5s;
+  transform: translateY(-3px);
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.box_option_course {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: white;
+  border: 1px solid #ececec;
+  border-radius: 18px;
+  padding: 18px;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.box_option_course:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+.box_option_course span:first-child {
+  font-size: 13px;
+  color: #888;
+}
+
+.box_option_course span:last-child {
+  font-weight: 600;
+}
+
+.description_course_close {
+  position: relative;
+  line-height: 2.2;
+  max-height: 140px;
+  overflow: hidden;
+  padding: 10px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.description_course_close::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+/* حالت باز */
+.description_course_open {
+  line-height: 2.2;
+  padding: 10px;
+  color: #374151;
+  font-size: 15px;
+}
+
+/* 📱 موبایل */
+@media (max-width: 768px) {
+  .description_course_close {
+    max-height: 120px;
+    font-size: 13px;
+    line-height: 2;
+    padding: 8px;
+  }
+
+  .description_course_open {
+    font-size: 13px;
+    line-height: 2;
+    padding: 8px;
+  }
+
+  .description_course_close::after {
+    height: 50px;
+  }
+}
+.text_h h1,
+.text_h h2,
+.text_h h3,
+.text_h h4,
+.text_h h5,
+.text_h h6 {
+  line-height: 35px;
+}
+
+.show_more_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.show_more_btn:hover {
+  background: #e0e7ff;
+}
+
+.course_thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.course_chapters {
+  background: white;
+  border: 1px solid #ececec;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+@media screen and (max-width: 992px) {
+  .btn_add_course_cart {
+    width: 90%;
+  }
+
+  .p_discount_price,
+  .free_course {
+    min-width: 130px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .btn_add_course_cart {
+    min-width: 95%;
+  }
+
+  .description_course_open,
+  .description_course_close {
+    line-height: 2;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .btn_add_course_cart {
+    height: 52px;
+    font-size: 14px;
+  }
+
+  .free_course {
+    font-size: 14px;
+  }
+
+  .p_discount_price span {
+    font-size: 14px;
+  }
+  .contetn_lesson_bar span,
+  .contetn_lesson_bar p {
+    font-size: 12px;
+  }
+  .lessons_contetn_parent {
+    flex-direction: column;
+  }
+  .start_course_btn {
+    flex-direction: column;
+  }
+}

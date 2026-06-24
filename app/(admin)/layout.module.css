@@ -1,0 +1,27 @@
+.admin_layout {
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.sidebar_container {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+   
+}
+.content_container {
+  margin-right: 300px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+}
+@media (max-width: 700px) {
+  .sidebar_container {
+    width: 80px;
+  }
+
+  .content_container {
+    margin-right: 80px;
+  }
+}

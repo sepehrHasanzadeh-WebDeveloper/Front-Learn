@@ -1,0 +1,19 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+}
+
+@media (max-width: 992px) {
+  .layout {
+    display: block;
+  }
+
+  .content {
+    padding: 16px;
+  }
+}

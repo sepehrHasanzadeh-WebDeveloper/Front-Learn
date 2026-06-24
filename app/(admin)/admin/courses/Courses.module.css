@@ -1,0 +1,159 @@
+.courses_parent {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* هدر بالا */
+.action_courses_parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+/* input */
+.input_search {
+  border: 1px solid gray;
+  height: 50px;
+  width: 450px;
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* button */
+.add_courses_button {
+  background: linear-gradient(135deg, #4f7cff 0%, #a855f7 100%);
+  color: white;
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* مهم‌ترین بخش (اسکرول تضمینی) */
+.table_wrapper {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+}
+
+/* جدول */
+.custom_table {
+  width: 100%;
+  min-width: 1000px; /* مهم */
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  direction: rtl;
+}
+
+/* header */
+.custom_table thead {
+  background-color: #f5f7fa;
+}
+
+.custom_table thead th {
+  text-align: center;
+  padding: 16px 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* body */
+.custom_table tbody tr td {
+  text-align: center;
+  padding: 8px;
+  color: #444;
+  white-space: nowrap;
+}
+
+/* تصویر */
+.course_image {
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* اکشن‌ها */
+.action_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* دکمه‌ها */
+.action_btn {
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit_course {
+  color: white;
+  background-color: var(--color-blue-500);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+/* وضعیت‌ها */
+.statusBG {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.draft {
+  background: #6366f1;
+}
+
+.published {
+  background: #22c55e;
+}
+
+.coming-soon {
+  background: #f59e0b;
+}
+
+/* 🔥 ریسپانسیو */
+@media (max-width: 768px) {
+  .action_courses_parent {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input_search {
+    width: 100%;
+  }
+
+  .add_courses_button {
+    width: 100%;
+  }
+
+  .custom_table {
+    min-width: 900px;
+  }
+
+  .custom_table thead th,
+  .custom_table tbody td {
+    font-size: 13px;
+    padding: 10px 8px;
+  }
+
+  .course_image {
+    width: 60px;
+    height: 60px;
+  }
+}

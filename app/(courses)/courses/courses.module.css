@@ -1,0 +1,35 @@
+.btn_filter_course {
+  padding: 12px 24px;
+  border-radius: 16px;
+  margin: 38px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #111827;
+  font-weight: 500;
+  box-shadow:
+    0 4px 20px rgba(255, 255, 255, 0.25),
+    0 8px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn_filter_course:hover {
+  background: rgba(199, 198, 198, 0.6);
+  box-shadow:
+    0 6px 24px rgba(255, 255, 255, 0.35),
+    0 10px 35px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.btn_filter_course:active {
+  transform: scale(0.98);
+}
+:global(.swiper-slide) {
+  height: auto;
+}
+
+:global(.swiper-slide > *) {
+  height: 100%;
+}
