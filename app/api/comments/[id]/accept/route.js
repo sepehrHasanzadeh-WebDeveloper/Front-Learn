@@ -5,19 +5,21 @@ import { NextResponse } from "next/server";
 export async function PATCH(req, { params }) {
   try {
     await connectToDB();
-    const { id } = await params;
 
-    const comment = await Comment.findById(id);
+    const { id } = params;
 
-    if (!comment) {
+    const updatedComment = await Comment.findByIdAndUpdate(
+      id,
+      { status: "accepted" },
+      { new: true },
+    );
+
+    if (!updatedComment) {
       return NextResponse.json(
         { success: false, message: "کامنت مورد نظر یافت نشد" },
         { status: 404 },
       );
     }
-
-    comment.status === "accepted"
-    await comment.save();
 
     return NextResponse.json(
       { success: true, message: "کامنت با موفقیت تایید شد" },

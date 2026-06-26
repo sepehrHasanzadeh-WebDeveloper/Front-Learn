@@ -76,9 +76,11 @@ export default function ProfilePage() {
               تاریخ عضویت: 1405/01/01
             </span>
 
-            <button className={styles.btn_edit_profile}>
+          <Link href={"/profile/account"}>
+              <button className={styles.btn_edit_profile}>
               ویرایش اطلاعات پروفایل
             </button>
+          </Link>
           </div>
         </div>
 
