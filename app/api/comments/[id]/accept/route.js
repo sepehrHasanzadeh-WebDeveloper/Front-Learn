@@ -6,7 +6,7 @@ export async function PATCH(req, { params }) {
   try {
     await connectToDB();
 
-    const { id } = params;
+    const { id } = await params;
 
     const updatedComment = await Comment.findByIdAndUpdate(
       id,
