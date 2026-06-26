@@ -16,7 +16,7 @@ export async function PATCH(req, { params }) {
       );
     }
 
-    comment.isAccept = true;
+    comment.status === "accepted"
     await comment.save();
 
     return NextResponse.json(

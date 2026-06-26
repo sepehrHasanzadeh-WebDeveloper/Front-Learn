@@ -19,14 +19,14 @@ export async function GET(req) {
     const skip = (page - 1) * limit;
 
     const comments = await Comment.find({
-      userId: user._id,
+      user: user.userId,
     })
       .populate("course", "title slug")
       .skip(skip)
       .limit(limit)
       .sort({ createdAt: -1 });
 
-    const totalComments = await Comment.countDocuments({ userId: user._id });
+    const totalComments = await Comment.countDocuments({ user: user.userId });
 
     return NextResponse.json({
       comments,

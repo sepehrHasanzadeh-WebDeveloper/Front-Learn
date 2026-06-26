@@ -70,6 +70,7 @@ export default function Comments() {
       toast.success(data.message);
     } catch (err) {
       console.log(err);
+      toast.error("خطایی در فرایند حذف کامنت به وجود امد.");
     }
   };
 
@@ -90,12 +91,13 @@ export default function Comments() {
       }
       setComments((prev) =>
         prev.map((comment) =>
-          comment._id === id ? { ...comment, isAccept: true } : comment,
+          comment._id === id ? { ...comment, status: "accepted" } : comment,
         ),
       );
       toast.success(data.message);
     } catch (err) {
       console.log(err);
+      toast.error("خطایی در فرایند تایید کامنت به وجود امد.");
     }
   };
 
@@ -125,7 +127,7 @@ export default function Comments() {
           comment._id === selectedComment._id
             ? {
                 ...comment,
-                isAccept: true,
+                status: "accepted",
                 answer: {
                   ...comment.answer,
                   body: replyText,
@@ -162,9 +164,10 @@ export default function Comments() {
                 setPage(1);
               }}
             >
-              <option value="all">همه کامنت ها</option>
+              <option value="all">همه کامنت‌ها</option>
               <option value="accepted">تایید شده</option>
               <option value="pending">در انتظار تایید</option>
+              <option value="rejected">رد شده</option>
               <option value="answered">پاسخ داده شده</option>
             </select>
           </div>
@@ -214,10 +217,12 @@ export default function Comments() {
                         <span className={styles.repliedBadge}>
                           پاسخ داده شده
                         </span>
-                      ) : comment.isAccept ? (
+                      ) : comment.status === "accepted" ? (
                         <span className={styles.accepted}>تایید شده</span>
-                      ) : (
+                      ) : comment.status === "pending" ? (
                         <span className={styles.pending}>در انتظار تایید</span>
+                      ) : (
+                        <span className={styles.rejected}>رد شده</span>
                       )}
                     </td>
 
@@ -236,7 +241,7 @@ export default function Comments() {
                         پاسخ
                       </button>
 
-                      {!comment.isAccept && (
+                      {comment.status !== "accepted" && (
                         <button
                           className={styles.action_btn}
                           style={{

@@ -89,7 +89,6 @@ export default function Comment() {
               key={comment._id}
               className="bg-white border border-zinc-200 rounded-xl p-5 my-2 shadow-sm"
             >
-           
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
                 <div>
                   <h3 className="font-bold text-lg">{comment.course?.title}</h3>
@@ -100,28 +99,26 @@ export default function Comment() {
                 </div>
 
                 <div>
-                  {comment.isAccept === true && (
+                  {comment.status === "accepted" && (
                     <span className="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700">
                       تایید شده
                     </span>
                   )}
 
-                  {comment.isAccept === false && (
-                    <span className="px-3 py-1 rounded-full text-sm bg-red-100 text-red-700">
-                      رد شده
+                  {comment.status === "pending" && (
+                    <span className="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700">
+                      در انتظار تایید
                     </span>
                   )}
 
-                  {(comment.isAccept === null ||
-                    comment.isAccept === undefined) && (
-                    <span className="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700">
-                      در انتظار تایید
+                  {comment.status === "rejected" && (
+                    <span className="px-3 py-1 rounded-full text-sm bg-red-100 text-red-700">
+                      رد شده
                     </span>
                   )}
                 </div>
               </div>
 
-      
               <div className="bg-zinc-50 rounded-lg p-4">
                 <p className="leading-8 text-gray-700">{comment.body}</p>
               </div>

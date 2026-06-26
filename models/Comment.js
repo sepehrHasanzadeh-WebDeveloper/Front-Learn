@@ -20,9 +20,10 @@ const commentSchema = new mongoose.Schema(
       required: true,
     },
 
-    isAccept: {
-      type: Boolean,
-      default: false,
+    status: {
+      type: String,
+      enum: ["pending", "accepted", "rejected"],
+      default: "pending",
     },
 
     answer: {

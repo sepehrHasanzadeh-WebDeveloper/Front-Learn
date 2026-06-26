@@ -22,9 +22,10 @@ export async function GET(req) {
 
     const comments = await Comment.countDocuments();
 
-    const notAcceptedComments = await Comment.countDocuments({
-      isAccept: false,
-    });
+   const notAcceptedComments = await Comment.countDocuments({
+  status: { $ne: "accepted" },
+});
+    
 
     const latestComments = await Comment.find({})
       .select("user course body createdAt")

@@ -23,7 +23,7 @@ export async function PATCH(req, { params }) {
         { status: 404 },
       );
     }
-    comment.isAccept = true
+    comment.status === "accepted"
     comment.answer = {
       body,
       createdAt: new Date(),

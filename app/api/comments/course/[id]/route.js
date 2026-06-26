@@ -7,11 +7,11 @@ export async function GET(req, { params }) {
     connectToDB();
     const { id } = await params;
     const comments = await Comment.find({
-      course: id,
-      isAccept: true,
-    })
-      .populate("user", "name email")
-      .sort({ createdAt: -1 });
+  course: id,
+  status: "accepted",
+})
+  .populate("user", "name email")
+  .sort({ createdAt: -1 });
     return NextResponse.json({ comments }, { status: 200 });
   } catch (err) {
     console.error(err);

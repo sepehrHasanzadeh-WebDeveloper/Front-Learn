@@ -17,7 +17,7 @@ export async function POST(req) {
     }
 
     const { body, courseId } = await req.json();
-    console.log(courseId);
+
     if (!body?.trim()) {
       return NextResponse.json(
         { success: false, message: "متن کامنت اجباری میباشد" },
@@ -52,7 +52,7 @@ export async function POST(req) {
   }
 }
 
-export async function GET(req, { searchParams }) {
+export async function GET(req) {
   try {
     await connectToDB();
 
@@ -64,19 +64,23 @@ export async function GET(req, { searchParams }) {
     let query = {};
     switch (filter) {
       case "accepted":
-        query.isAccept = true;
+        query.status = "accepted";
         break;
 
       case "pending":
-        query.isAccept = false;
+        query.status = "pending";
         break;
 
-    case "answered":
-  query["answer.body"] = {
-    $exists: true,
-    $nin: ["", null],
-  };
-  break;
+      case "rejected":
+        query.status = "rejected";
+        break;
+
+      case "answered":
+        query["answer.body"] = {
+          $exists: true,
+          $nin: ["", null],
+        };
+        break;
 
       default:
         break;
