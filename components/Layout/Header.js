@@ -14,11 +14,13 @@ import { HiMenuAlt2 } from "react-icons/hi";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { useCart } from "@/contexts/CartContext";
 import Skeleton from "react-loading-skeleton";
+import { CiDark, CiLight } from "react-icons/ci";
+import { useTheme } from "@/contexts/ThemeContext";
 export default function Header({ theme }) {
   const { user, loading, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpne] = useState(false);
   const { cartCount } = useCart();
-
+  const { themeg, toggleTheme } = useTheme();
   return (
     <>
       <header>
@@ -89,6 +91,10 @@ export default function Header({ theme }) {
                 )}
                 <SlBasket size={20} />
               </Link>
+              <div onClick={toggleTheme} className={styles.cart_wraper}>
+                
+                 {themeg === "dark" ? <CiLight size={22} /> : <CiDark size={22} />}
+              </div>
             </div>
           </div>
 

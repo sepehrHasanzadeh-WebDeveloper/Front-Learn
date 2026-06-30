@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import styles from "./Accordion.module.css";
 
 export default function Accordion({ items }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -10,45 +11,31 @@ export default function Accordion({ items }) {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className={styles.accordion}>
       {items.map((item, i) => (
         <div
           key={i}
-          className={`
-            overflow-hidden rounded-2xl border border-gray-200
-            bg-white shadow-sm transition-all duration-300
-            hover:shadow-lg
-            ${openIndex === i ? "shadow-lg border-indigo-200" : ""}
-          `}
+          className={`${styles.acc_item} ${openIndex === i ? styles.open : ""}`}
         >
           <button
             onClick={() => toggle(i)}
-            className="flex w-full items-center justify-between p-5 text-right"
+            className={styles.acc_btn}
           >
-            <span className="font-semibold text-gray-800 text-base">
+            <span className={styles.acc_question}>
               {item.question}
             </span>
 
             <div
-              className={`
-                flex items-center justify-center
-                w-8 h-8 rounded-full bg-gray-100
-                transition-all duration-300
-                ${openIndex === i ? "rotate-180 bg-indigo-100" : ""}
-              `}
+              className={`${styles.acc_icon} ${openIndex === i ? styles.rotated : ""}`}
             >
-              <ChevronDownIcon className="h-5 w-5 text-indigo-600" />
+              <ChevronDownIcon className={styles.icon} />
             </div>
           </button>
 
           <div
-            className={`
-              transition-all duration-300 ease-in-out
-              ${openIndex === i ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
-              overflow-hidden
-            `}
+            className={`${styles.acc_body} ${openIndex === i ? styles.open : ""}`}
           >
-            <p className="px-5 pb-5 text-gray-600 leading-8 text-sm">
+            <p className={styles.acc_answer}>
               {item.answer}
             </p>
           </div>

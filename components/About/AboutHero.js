@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const technologies = [
   {
@@ -35,6 +36,7 @@ const technologies = [
 ];
 
 function FloatingCard({ tech, index }) {
+  const { themeg } = useTheme();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -63,7 +65,7 @@ function FloatingCard({ tech, index }) {
     >
       <h3 className="text-sm sm:text-base lg:text-lg font-bold">{tech.name}</h3>
 
-      <p className="mt-2 text-xs sm:text-sm text-gray-500">
+      <p className={`mt-2 text-xs sm:text-sm ${themeg === "light" ? "text-gray-500" : "text-white"}`}>
         {tech.description}
       </p>
     </motion.div>
@@ -71,6 +73,7 @@ function FloatingCard({ tech, index }) {
 }
 
 export default function AboutHero() {
+   const { themeg } = useTheme();
   return (
     <section className="min-h-screen flex items-center px-6 mb-5 mt-5 ">
       <div className="mx-auto grid max-w-7xl  items-center gap-16 lg:grid-cols-2">
@@ -88,7 +91,7 @@ export default function AboutHero() {
             یادگیری فرانت‌اند با پروژه‌های واقعی
           </h2>
 
-          <p className="mt-6 max-w-xl text-lg text-gray-500">
+          <p className={`mt-6 max-w-xl text-lg ${themeg === "light" ? "text-gray-500" : "text-gray-100"} `}>
             Front Learn یک پلتفرم آموزشی برای توسعه‌دهندگان فرانت‌اند است که با
             مسیرهای یادگیری هدفمند، پروژه‌های عملی و تکنولوژی‌های مدرن وب،
             یادگیری را ساده‌تر می‌کند.
@@ -116,7 +119,7 @@ export default function AboutHero() {
               <h2 className="text-4xl font-bold text-violet-600">
                 Front Learn
               </h2>
-              <p className="mt-3 text-gray-500">مسیر یادگیری توسعه فرانت‌اند</p>
+              <p className={`mt-3  ${themeg === "light" ? "text-gray-500" : "text-white"}`}>مسیر یادگیری توسعه فرانت‌اند</p>
             </div>
           </motion.div>
 

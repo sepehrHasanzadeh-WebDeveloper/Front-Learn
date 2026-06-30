@@ -38,10 +38,6 @@ body {
   font-weight: 700;
   overflow-x: hidden;
 }
-body.dark {
-  background-color: var(--bg-dark-300);
-  color: var(--text-dark-100);
-}
 
 ul {
   list-style-position: inside;
@@ -108,4 +104,21 @@ button:disabled {
 .swiper-button-prev:hover {
   background: #fff !important;
   transform: translateY(-50%) scale(1.1) !important;
+}
+
+
+body.dark {
+  color: var(--text-dark-100);
+}
+
+
+
+
+body.dark .slider-wrapper {
+  background: rgba(37, 49, 75, 0.253); /* شیشه‌ای تیره */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
 }

@@ -1,4 +1,4 @@
-.wrapper {
+ar.wrapper {
   overflow-x: hidden;
   background: linear-gradient(135deg, #f8faff, #ffffff, #f5f3ff);
   border: 1px solid #ececec;
@@ -233,4 +233,91 @@
   .article_right_side img {
     aspect-ratio: 16 / 10;
   }
+}
+/* dark style  */
+
+:global(body.dark) .section_header span {
+  color: white;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+    0 20px 60px rgba(0, 0, 0, 0.35);
+}
+:global(body.dark) .section_header h3 ,
+:global(body.dark) .section_header p {
+  color: white;
+}
+:global(body.dark) .section_header p {
+  color: rgb(206, 206, 206);
+}
+:global(body.dark) .article_right_side ,
+:global(body.dark) .article_right_side span {
+  color: white;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+    0 20px 60px rgba(0, 0, 0, 0.35);
+}
+:global(body.dark) .article_right_side strong {
+  color: white;
+}
+:global(body.dark) .article_right_side p {
+  color: rgb(206, 206, 206);
+}
+:global(body.dark) .article_box ,
+:global(body.dark) .article_box span {
+  color: white;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+    0 20px 60px rgba(0, 0, 0, 0.35);
+}
+:global(body.dark) .article_box strong {
+  color: white;
+}
+:global(body.dark) .article_box p {
+  color: rgb(206, 206, 206);
+}
+:global(body.dark) .blog_action button {
+   color: white;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+    0 20px 60px rgba(0, 0, 0, 0.35);
 }

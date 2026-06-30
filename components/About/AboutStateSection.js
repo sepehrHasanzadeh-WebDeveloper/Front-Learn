@@ -1,5 +1,6 @@
 "use client";
 
+import { useTheme } from "@/contexts/ThemeContext";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -34,7 +35,7 @@ function useCountUp(target, isActive, duration = 1500) {
 function Counter({ value, label, delay = 0 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
+  const {themeg} = useTheme()
   const count = useCountUp(value, isInView);
 
   return (
@@ -59,14 +60,15 @@ function Counter({ value, label, delay = 0 }) {
         {count}+
       </motion.h2>
 
-      <p className="text-gray-600 mt-3 relative">{label}</p>
+      <p className={`${themeg === "dark" ? "text-gray-200" : "text-gray-600"} mt-3 relative`}>{label}</p>
     </motion.div>
   );
 }
 
 export default function StatsSection() {
+  const {themeg} = useTheme()
   return (
-    <section className="py-28 px-6 bg-white my-5">
+    <section className={`py-4 rounded-2xl px-6 ${themeg === "dark" ? "bg-[#10101977]" : "bg-white"} my-5`}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,7 +78,7 @@ export default function StatsSection() {
         >
           <h2 className="text-4xl font-bold text-gray-900">آمار Front Learn</h2>
 
-          <p className="text-gray-600 my-4">
+          <p className={`${themeg === "dark" ? "text-white" :"text-gray-600"} my-4`}>
             رشد واقعی کاربران و فعالیت‌ها در پلتفرم
           </p>
         </motion.div>

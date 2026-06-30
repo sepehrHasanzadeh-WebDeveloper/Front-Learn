@@ -4,10 +4,12 @@ import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
 import Pagination from "@/components/Shared/Pagination/Pagination";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Comment() {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { themeg } = useTheme();
   const [error, setError] = useState("");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -51,13 +53,19 @@ export default function Comment() {
           {[1, 2, 3].map((item) => (
             <div
               key={item}
-              className="animate-pulse bg-white border rounded-xl p-5"
+              className={`animate-pulse ${themeg === "light" ? "bg-white" : "bg-[#10101977]"} border rounded-xl p-5`}
             >
-              <div className="h-5 bg-gray-200 rounded w-40 mb-4"></div>
+              <div
+                className={`h-5 ${themeg === "light" ? "bg-grey-200" : "bg-[#10101977]"} rounded w-40 mb-4`}
+              ></div>
 
-              <div className="h-4 bg-gray-200 rounded w-24 mb-6"></div>
+              <div
+                className={`h-4 ${themeg === "light" ? "bg-grey-200" : "bg-[#10101977]"} rounded w-24 mb-6`}
+              ></div>
 
-              <div className="h-24 bg-gray-100 rounded"></div>
+              <div
+                className={`h-24 ${themeg === "light" ? "bg-grey-200" : "bg-[#10101977]"} rounded`}
+              ></div>
             </div>
           ))}
         </div>
@@ -87,7 +95,7 @@ export default function Comment() {
           comments.map((comment) => (
             <div
               key={comment._id}
-              className="bg-white border border-zinc-200 rounded-xl p-5 my-2 shadow-sm"
+              className={`${themeg === "light" ? "bg-white" : "bg-[#10101977]"} border rounded-xl p-5 my-2 shadow-sm`}
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
                 <div>
@@ -119,8 +127,14 @@ export default function Comment() {
                 </div>
               </div>
 
-              <div className="bg-zinc-50 rounded-lg p-4">
-                <p className="leading-8 text-gray-700">{comment.body}</p>
+              <div
+                className={`${themeg === "light" ? "bg-zinc-50" : "bg-[#2f2f38b9]"} rounded-lg p-4`}
+              >
+                <p
+                  className={`leading-8 ${themeg === "light" ? "text-gray-700" : "white"}`}
+                >
+                  {comment.body}
+                </p>
               </div>
 
               {comment.answer?.body && (
@@ -129,7 +143,9 @@ export default function Comment() {
                     <span className="font-bold text-blue-700">پاسخ مدرس</span>
                   </div>
 
-                  <p className="leading-8 text-gray-700">
+                  <p
+                    className={`leading-8 ${themeg === "light" ? "text-gray-700" : "white"}`}
+                  >
                     {comment.answer.body}
                   </p>
                 </div>
@@ -139,13 +155,13 @@ export default function Comment() {
         ) : (
           <div
             style={{ marginTop: "50px" }}
-            className="bg-white border border-dashed border-zinc-300 rounded-xl p-4 text-center"
+            className={`${themeg === "light" ? "bg-white" : "bg-[#10101977]"} border border-dashed border-zinc-300 rounded-xl p-4 text-center`}
           >
             <h3 className="font-bold text-lg mb-2">
               هنوز دیدگاهی ثبت نکرده‌اید
             </h3>
 
-            <p className="text-gray-500">
+            <p className={`${themeg === "light" ? "text-gray-500" : "white"}`}>
               پس از ثبت دیدگاه برای دوره‌ها، نظرات شما در این بخش نمایش داده
               می‌شود.
             </p>

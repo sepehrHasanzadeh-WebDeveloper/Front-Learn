@@ -50,7 +50,7 @@ export default function ProfilePage() {
             />
           </Link>
 
-          <div>
+          <div >
             <h2>فرانت لرن</h2>
             <span>پنل کاربری</span>
           </div>

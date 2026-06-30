@@ -161,3 +161,25 @@
 :global(.swiper-slide > *) {
   height: 100%;
 }
+:global(body.dark) .course_card {
+    background: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+:global(body.dark) .course_body h5  {
+  color: white;
+}
+:global(body.dark) .course_body p {
+  color: rgb(204, 204, 204);
+}
+:global(body.dark) .course_body .teacher {
+  color: rgb(204, 204, 204);
+}
+:global(body.dark) .price_sec .normal_price  {
+ color: #c582ef;
+}
+:global(body.dark) .price_sec .discount_price strong   {
+ color: #c582ef;
+}

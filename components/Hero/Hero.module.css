@@ -15,6 +15,31 @@
   margin: 10px;
 
 }
+:global(body.dark) .Header_bg_section {
+    background:
+    radial-gradient(circle at top, rgba(139,92,246,.12), transparent 45%),
+    linear-gradient(
+      -45deg,
+      #09090f,
+      #11111b,
+      #161425,
+      #0b0b12
+    );
+
+  background-size: 100% 100%, 400% 400%;
+  animation: gradientAnimation 20s ease infinite;
+}
+:global(body.dark) .Header_bg_none_section {
+     background:
+    radial-gradient(circle at top, rgba(139,92,246,.12), transparent 45%),
+    linear-gradient(
+      -45deg,
+      #09090f,
+      #11111b,
+      #161425,
+      #0b0b12
+    );
+}
 .Header_bg_none_section:empty {
   display: none;
 }
@@ -139,4 +164,7 @@
   .button_2_hero {
     width: 100%;
   }
+}
+:global(body.dark) .header_box_bottom {
+  display: none;
 }

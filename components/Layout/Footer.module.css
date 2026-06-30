@@ -106,7 +106,6 @@
   display: flex;
   gap: 12px;
   margin-top: 21px;
- 
 }
 .footer_course_list,
 .docs_footer {
@@ -136,7 +135,6 @@
   line-height: 1.75rem;
 }
 
-
 @media screen and (max-width: 995px) {
   .footer_head {
     flex-direction: column;
@@ -154,4 +152,26 @@
   .title_copy {
     text-align: center;
   }
+}
+:global(body.dark) .footer {
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(99, 102, 241, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(168, 85, 247, 0.14),
+      transparent 65%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(56, 189, 248, 0.08),
+      transparent 70%
+    ),
+    #0b0b10;
+
+  background-blend-mode: screen;
+  padding: 10px 3px;
 }

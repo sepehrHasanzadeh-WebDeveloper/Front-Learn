@@ -25,3 +25,7 @@
   width: 64px;
   height: 64px;
 }
+:global(body.dark) .text_lang_section ,
+:global(body.dark) .title_lang_section {
+  color: white;
+}

@@ -120,6 +120,7 @@ const checkOutOrderhandler = async () => {
             </div>
           </Col>
           <Col sm={12} md={12} lg={4}>
+          <div className={styles.pric_summery_box} style={{padding:"20px "}}>
             <div className={styles.summary_header}>
               <strong>خلاصه سبد خرید</strong>
               <p>1 دوره</p>
@@ -150,6 +151,7 @@ const checkOutOrderhandler = async () => {
             <p className={styles.payment_note}>
               پرداخت امن از طریق درگاه بانکی
             </p>
+            </div>
           </Col>
         </Row>
       </Container>

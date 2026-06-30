@@ -14,6 +14,7 @@ import "swiper/css/pagination";
 export default function LastCourses() {
   const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState([]);
+    
   useEffect(() => {
     const fetchCourse = async () => {
       try {
@@ -34,7 +35,7 @@ export default function LastCourses() {
     <>
       <Container className="my-5">
         <h4 className="my-4 ">اخرین دوره های اموزشی</h4>
-        <div className="slider-wrapper shadow-2xl">
+        <div className={`slider-wrapper  shadow-2xl`}>
           <div className="swiper-button-prev" style={{ marginLeft: "14px" }}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path

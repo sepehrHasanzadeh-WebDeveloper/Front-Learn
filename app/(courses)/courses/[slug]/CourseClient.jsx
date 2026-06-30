@@ -8,7 +8,7 @@ import { RxCaretDown, RxCaretUp } from "react-icons/rx";
 import MessageBox from "@/components/Ui/MessageBox";
 import { PiEmpty } from "react-icons/pi";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { BiDownload, BiLock } from "react-icons/bi";
+import {  BiLock } from "react-icons/bi";
 import sanitizeHtml from "sanitize-html";
 import CourseComments from "@/components/Sections/Course/CourseComment";
 import { useCart } from "@/contexts/CartContext";
@@ -234,7 +234,7 @@ export default function CourseClient({ course }) {
           className={`${styles.course_chapters} w-full d-flex flex-col mt-5`}
         >
           <div className="d-flex justify-between p-3 align-items-center">
-            <h3 className="fw-bold" style={{ color: "var(--sub-text-color)" }}>
+            <h3 className="fw-bold" >
               سر فصل دوره
             </h3>
             <p className="mt-2">{course.lessonsCount} جلسه</p>

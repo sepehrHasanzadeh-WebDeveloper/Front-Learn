@@ -5,9 +5,10 @@ import { myFonts, avinyFont } from "./fonts";
 import { Toaster } from "sonner";
 import { AuthProvider } from "@/contexts/AuthContext";
 import HeaderWrapper from "@/components/Layout/HeaderWrapper";
-
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import FooterWrapper from "@/components/Layout/FooterWrapper";
 import CartProvider from "@/contexts/CartContext";
+import CheckTheme from "@/components/Shared/DarkTheme/CheckTheme";
 
 const theme = {
   buttonBg: "bg-gray-100",
@@ -37,6 +38,8 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col">
+        <ThemeProvider>
+                <CheckTheme />
         <AuthProvider>
           <CartProvider>
             <Toaster position="top-right" richColors expand={false} />
@@ -47,6 +50,7 @@ export default function RootLayout({ children }) {
           </CartProvider>
         </AuthProvider>
         <FooterWrapper />
+        </ThemeProvider>
       </body>
     </html>
   );

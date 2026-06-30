@@ -62,7 +62,7 @@ export default function FAQSection() {
 
           <Col lg={6} className="text-center">
             <Image
-              src="/images/faq.jpg"
+              src="/images/faq.png"
               alt="سوالات متداول"
               width={550}
               height={550}
